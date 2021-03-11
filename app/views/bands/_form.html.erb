@@ -1,3 +1,4 @@
+<div class=" container-fluid form-band">
 <%= form_with(model: band) do |form| %>
   <% if band.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +12,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="table table-form">
+    <tr>
+      <td><%= form.label :name %></td>
+      <td><%= form.text_field :name %></td>
+    </tr>
 
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.number_field :type %>
-  </div>
+  <tr>
+    <td><%= form.label :kind %></td>
+    <td><%= form.select :kind, @kinds %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
-  </div>
+  <tr>
+    <td><%= form.label :start_date %></td>
+    <td><%= form.date_field  :start_date %></td>
+  </tr>
 
-  <div class="actions">
-    <%= form.submit %>
+  <%= form.submit class: 'action btn m-5 text-light' %>
+
+  </thead>
   </div>
-<% end %>
+  <% end %>
+</table>  
+</div>

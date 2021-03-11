@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Concerts</h1>
+<h1 class="text-center mt-5 mb-2">Concerts</h1>
 
-<table>
+<table class="table table-index">
   <thead>
     <tr>
       <th>Location</th>
@@ -20,14 +20,15 @@
         <td><%= concert.date %></td>
         <td><%= concert.quantity %></td>
         <td><%= concert.duration %></td>
-        <td><%= link_to 'Show', concert %></td>
-        <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
-        <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', band_concert_path(@band, concert), class: 'btn' %></td>
+        <td><%= link_to 'Edit', edit_band_concert_path(@band, concert), class: 'btn' %></td>
+        <td><%= link_to 'Destroy', band_concert_path(@band, concert), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Concert', new_concert_path %>
+<div class="text-center"> 
+  <%= link_to 'New Concert', new_band_concert_path(@band), class: 'btn m-5 text-light' %>
+</div>

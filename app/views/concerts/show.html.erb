@@ -1,24 +1,30 @@
+<div class="text-center">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @concert.location %>
-</p>
+<table class="table table-form">
+  <thead>
+    <tr>
+      <th><strong>Location:</strong></th>
+      <th><%= @concert.location %></th>
+    </tr>
 
-<p>
-  <strong>Date:</strong>
-  <%= @concert.date %>
-</p>
+    <tr>
+      <th><strong>Date:</strong></th>
+      <th><%= @concert.date %></th>
+    </tr>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @concert.quantity %>
-</p>
+    <tr>
+      <th><strong>Quantity:</strong></th>
+      <th><%= @concert.quantity %></th>
+    </tr>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @concert.duration %>
-</p>
+    <tr>
+      <th><strong>Duration:</strong></th>
+      <th><%= @concert.duration %></th>
+    </tr>
+  </thead>
+</table>
 
-<%= link_to 'Edit', edit_concert_path(@concert) %> |
-<%= link_to 'Back', concerts_path %>
+<%= link_to 'Edit', edit_band_concert_path(@band, @concert), class: 'btn m-5 text-light' %> |
+<%= link_to 'Back', band_concerts_path(@band), class: 'btn m-5 text-light' %>
+</div>

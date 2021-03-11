@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bands</h1>
+<h1 class="text-center mt-5 mb-2">Bands</h1>
 
-<table>
+<table class="table table-index">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Type</th>
+      <th>Kind</th>
       <th>Start date</th>
+      <th>Band Concerts</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,11 +17,12 @@
     <% @bands.each do |band| %>
       <tr>
         <td><%= band.name %></td>
-        <td><%= band.type %></td>
+        <td><%= band.kind %></td>
         <td><%= band.start_date %></td>
-        <td><%= link_to 'Show', band %></td>
-        <td><%= link_to 'Edit', edit_band_path(band) %></td>
-        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= band.concerts.count %></td>
+        <td><%= link_to 'Show', band, class: 'btn' %></td>
+        <td><%= link_to 'Edit', edit_band_path(band), class: 'btn' %></td>
+        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Band', new_band_path %>
+<div class="text-center">
+  <%= link_to 'New Band', new_band_path, class: 'btn m-5 text-light'  %>
+</div>

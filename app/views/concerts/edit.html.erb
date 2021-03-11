@@ -1,6 +1,8 @@
-<h1>Editing Concert</h1>
+<div class="container text-center">
+<h1 class="text-center mt-5 mb-2">Editing concert</h1>
 
 <%= render 'form', concert: @concert %>
 
-<%= link_to 'Show', @concert %> |
-<%= link_to 'Back', concerts_path %>
+<%= link_to 'Show', [@band, @concert], class: 'btn my-3 m-5 text-light' %> 
+<%= link_to 'Back', band_concerts_path(@band), class: 'btn m-5 text-light' %>
+</div>
